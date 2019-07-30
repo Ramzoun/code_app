@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.toumouhTeam.raisiya" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<name>Salama</name>
+	<description>
+		A sample Apache Cordova application that responds to the
+		deviceready event.
+	</description>
+	<author email=""
+			href="">
+	Toumouh Team
+	</author>
+
+	<content src="index.html" />
+
+	<preference name="android-minSdkVersion" value="14" />
+	
+	
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	
+	<platform name="android">
+	
+	</platform>
+	
+	
+	<access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+	
+
+</widget>
