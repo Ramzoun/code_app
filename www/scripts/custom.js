@@ -853,5 +853,14 @@ $(document).ready(function () {
     $('.tutorial').click(function(){
        $(this).fadeOut(500); 
     });
+	
+	
+	
+	// add by me
+	
+	
+  
+  
+	
     
 });

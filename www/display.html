@@ -855,6 +855,11 @@
             <a class="next-staff-slider" href="#"><i class="fa fa-angle-right"></i></a>
             <a class="prev-staff-slider" href="#"><i class="fa fa-angle-left"></i></a>
         </div>
+
+		
+		<div id="qList">
+			<p>some text</p>
+		</div>
         
         
         </div>
@@ -867,4 +872,21 @@
     
 
 </div>
+
+<script>
+$(document).ready(function(){
+
+$.getJSON("http://192.168.1.2:8080/category/demo", function(data) {     
+  // Remove all child nodes (including text nodes) 
+  $("#qList").empty();      
+  $.each(data, function(i, field){
+      $("#qList").append('<div class="item">'
+      								+'<h4>'+field.qText+'</h4>'
+      							+'</div>');
+    });      
+}).fail(function(jqxhr, textStatus, error){var err = textStatus + ", " + error;console.log( "Request Failed: " + err );});
+
+});
+</script>
+
 </body>

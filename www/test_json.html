@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.getJSON("http://192.168.1.2:8080/category/demo", function(data) {     
+  // Remove all child nodes (including text nodes) 
+  $("#qList").empty();      
+  $.each(data, function(i, field){
+      $("#qList").append('<div class="item">'
+      								+'<h4>'+field.qText+'</h4>'
+      							+'</div>');
+    });      
+}).fail(function(jqxhr, textStatus, error){var err = textStatus + ", " + error;console.log( "Request Failed: " + err );});
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+
+<div id="qList">text text</div>
+
+</body>
+</html>
