@@ -834,5 +834,27 @@
     </div>
 </div>
     
+<script>
+$(document).ready(function(){
+  $(".pageapp-login-button").click(function(){
+    
+	$.ajax
+({
+  type: "GET",
+  url: "http://192.168.1.2:8080/perform_login",
+  headers: {
+    "Authorization": "Basic " + btoa("ramzoun" + ":" + "abc")
+  }
+})
+.done(function(){
+    alert('Authenticated!')
+})
+.fail(function(){
+    alert('Error!')
+});
+	
+	});
+});
+</script>
 
 </body>
