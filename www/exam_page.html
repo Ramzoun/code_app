@@ -348,7 +348,13 @@
 <script>
 $(document).ready(function(){
 
-$.getJSON("http://192.168.1.4:8080/category/1/1", function(data) {     
+const urlParams = new URLSearchParams(window.location.search);
+var p = "http://192.168.1.4:8080/category/"
+		+urlParams.has('th')
+		+"/"
+		+urlParams.has('s');
+
+$.getJSON(p, function(data) {     
   // Remove all child nodes (including text nodes) 
   $(".swiper-wrapper").empty();      
   $.each(data, function(i, field){
@@ -364,6 +370,9 @@ $.getJSON("http://192.168.1.4:8080/category/1/1", function(data) {
 }).fail(function(jqxhr, textStatus, error){var err = textStatus + ", " + error;console.log( "Request Failed: " + err );});
 
 });
+
+
+
 </script>
 
 
