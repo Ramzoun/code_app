@@ -375,7 +375,7 @@ $.getJSON(p, function(data) {
   $(".swiper-wrapper").empty();      
   $.each(data, function(i, field){
       $(".swiper-wrapper").append('<div class="swiper-slide">'
-									+ '<img class="responsive-image" src="images/pictures/1.jpg" alt="img">'
+									+ '<img class="responsive-image" src="http://192.168.1.6:8080/res/'+field.imgName+' alt="img">'
 									+ '<h3 class="center-text">'+field.qText+'</h3>'
 									+ '<p class="center-text">'+field.pro1+'</p>'
 									+ '<p class="center-text">'+field.pro2+'</p>'
