@@ -383,7 +383,13 @@ $.getJSON(p, function(data) {
 									+ '<div class="overlay"></div>'
 								+'</div>');
     });      
-}).fail(function(jqxhr, textStatus, error){var err = textStatus + ", " + error;console.log( "Request Failed: " + err );});
+}).fail(function(jqxhr, textStatus, error){
+											/*
+											var err = textStatus + ", " + error;
+											console.log( "Request Failed: " + err );
+											*/
+											window.location = "pageapp-login.html";
+										});
 
 });
 
