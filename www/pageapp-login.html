@@ -808,11 +808,11 @@
                     <div class="spacer"></div>
                     <div class="cover-field">
                         <i class="fa fa-user"></i>
-                        <input type="text" value="Username" name="username">
+                        <input type="text" value="" name="username" id="username" >
                     </div>                
                     <div class="cover-field full-bottom">
                         <i class="fa fa-lock"></i>
-                        <input type="password" value="passswordhere" name="password">
+                        <input type="password" value="" name="password" id="password">
                     </div>
                     <a href="#" class="pageapp-login-button button button-green"><i class="fa fa-arrow-right"></i>Login</a>
                     <div class="decoration half-bottom"></div>
@@ -840,13 +840,14 @@ $(document).ready(function(){
 	$.ajax
 ({
   type: "GET",
-  url: "http://192.168.1.4:8080/category/1/1",
+  url: "http://192.168.1.6:8080/access",
   headers: {
-    "Authorization": "Basic " + btoa("ramzoun" + ":" + "abc")
+    "Authorization": "Basic " + btoa( $("input#username").val() + ":" + $("input#password").val())
   }
 })
 .done(function(){
-    alert('Authenticated!')
+    alert('Authenticated!');
+	window.location = "index.html";
 })
 .fail(function(){
     alert('Error!')
