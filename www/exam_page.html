@@ -35,9 +35,12 @@
 </head>
 
 <body>
-<div class="gallery-fix"></div><!-- Fix Gallery next/prev error on Android -->
-<div class="sidebar-tap-close"></div><!-- Overlay for content to close Sidebar -->
- 
+<!--
+<div class="gallery-fix"></div>
+<div class="sidebar-tap-close"></div>
+
+-->
+
 
     
          
@@ -91,9 +94,9 @@ $.getJSON(p, function(data) {
       $(".swiper-wrapper").append('<div class="swiper-slide">'
 									+ '<img class="responsive-image" src="http://192.168.1.6:8080/res/'+field.imgName+'" alt="img">'
 									+ '<h3 class="center-text">'+field.qText+'</h3>'
-									+ '<p class="center-text">'+field.pro1+'</p>'
-									+ '<p class="center-text">'+field.pro2+'</p>'
-									+ '<p class="center-text">'+field.pro3+'</p>'
+									+ '<input type="radio" name="rep'+i+'" value="a"> '+field.pro1+'<br>'
+									+ '<input type="radio" name="rep'+i+'" value="a"> '+field.pro2+'<br>'
+									+ '<input type="radio" name="rep'+i+'" value="a"> '+field.pro3+'<br>'
 									+ '<div class="overlay"></div>'
 								+'</div>');
     });      
