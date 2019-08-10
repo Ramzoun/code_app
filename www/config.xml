@@ -20,6 +20,8 @@
 	
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	<plugin name="cordova-plugin-screen-orientation" source="npm" spec="~3.0.2" />
+
 	
 	<platform name="android">
 	
