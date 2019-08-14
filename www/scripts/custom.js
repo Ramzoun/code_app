@@ -190,10 +190,7 @@ $(document).ready(function () {
         var swiper_single = new Swiper('.single-item', {autoplay:3000});
         var swiper_text = new Swiper('.text-slider', {autoplay:3000});
         var swiper_news_slider = new Swiper('.news-slider');
-        var swiper_home_slider = new Swiper('.homepage-slider', {navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },autoplay:30000});
+        var swiper_home_slider = new Swiper('.homepage-slider', {autoplay:30000});
         var swiper_quote_slider = new Swiper('.quote-slider', {autoplay:3000});
         var swiper_coverpage = new Swiper('.coverpage-slider', {autoplay:3000});
         var swiper_category_slider = new Swiper('.category-slider', {
