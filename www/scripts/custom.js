@@ -194,7 +194,8 @@ $(document).ready(function () {
 																	nextButton: '.next-staff-slider',
 																	prevButton: '.prev-staff-slider',
 																	autoplay:30000,
-																	
+																	autoplayDisableOnInteraction: false,
+																	loop:false
 																});
         var swiper_quote_slider = new Swiper('.quote-slider', {autoplay:3000});
         var swiper_coverpage = new Swiper('.coverpage-slider', {autoplay:3000});
