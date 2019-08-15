@@ -42,12 +42,7 @@
 -->
 
 
-<!--
-<script>
-screen.lockOrientation('landscape');
-alert('Orientation is ' + screen.orientation);
-</script>
- -->
+
 
  
 <div id="page-content">
@@ -63,10 +58,10 @@ alert('Orientation is ' + screen.orientation);
 			 <!--
 			 <div class="swiper-button-prev"></div>
 			 <div class="swiper-button-next"></div>
-			 
+			 -->
 			 <a class="next-staff-slider" href="#"><i class="fa fa-angle-right"></i></a>
             <a class="prev-staff-slider" href="#"><i class="fa fa-angle-left"></i></a>
-			-->
+			
         </div>
         
 		
@@ -107,7 +102,7 @@ $.getJSON(p, function(data) {
   $(".swiper-wrapper").empty();      
   $.each(data, function(i, field){
       $(".swiper-wrapper").append('<div class="swiper-slide">'
-									+ '<img class="responsive-image" src="http://192.168.1.6:8080/res/'+field.imgName+'" alt="img">'
+									+ '<img class="responsive-image" src="http://192.168.1.222:8080/res/'+field.imgName+'" alt="img">'
 									+ '<h3 class="center-text">'+field.qText+'</h3>'
 									+ '<input type="radio" name="rep'+i+'" value="a"> '+field.pro1+'<br>'
 									+ '<input type="radio" name="rep'+i+'" value="b"> '+field.pro2+'<br>'
