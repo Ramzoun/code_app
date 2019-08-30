@@ -24,7 +24,60 @@ $(document).ready(function(){
         setTimeout(function(){
             $('.page-hider').remove();
         },250)
-                
+        
+
+		// aaaaa
+		if($('#me').length){
+				const urlParams = new URLSearchParams(window.location.search);
+				var p = "http://192.168.1.222:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
+				//console.log(p)
+				
+				$.getJSON(p, function(data) {     
+					// Remove all child nodes (including text nodes) 
+					$(".single-slider").empty();      
+					$.each(data, function(i, field){
+					$(".single-slider").append('<div>'
+									+ '<img width="700" class="owl-lazy" src="images/empty.png" data-src="images/pictures/3lq.jpg" data-src-retina="images/pictures/3.jpg">'
+									+ '<div class="above-overlay cover-content-bottom center-text">'
+									+ 		'<h2 class="color-white bolder">'+field.qText+'</h2>'
+									+		'<p class="color-gray-light bottom-0">'
+									+			'A professional mobile template, fast loading, fluidly animated mobile user experience for you.'
+									+		'</p>'
+									+'</div>'
+									+'<div class="overlay overlay-gradient"></div>'
+								+'</div>');
+					});      
+				}).fail(function(jqxhr, textStatus, error){
+											
+											//var err = textStatus + ", " + error;
+											//console.log( "Request Failed: " + err );
+											
+											window.location = "pageapp-login.html";
+										});
+										
+				//console.log('____s___');
+				
+		}
+
+
+		$(".pageapp-login-button").click(function(){    
+			$.ajax({
+					type: "GET",
+					url: "http://192.168.1.222:8080/access",
+					headers: {"Authorization": "Basic " + btoa( $("input#username").val() + ":" + $("input#password").val())}
+			})
+			.done(function(){
+					alert('Authenticated!');
+					window.location = "index.html";
+			})
+			.fail(function(){
+				alert('Error!')
+			});
+	
+		});
+		
+		
+		
         //Adding Menu Hider
         if(!$('#page-transitions .menu-hider').length){$('#page-transitions').append('<div class="menu-hider"></div>')}        
         
@@ -745,6 +798,7 @@ $(document).ready(function(){
       	};
       var smoothState = $('#page-transitions').smoothState(options).data('smoothState');
     });
+	
 	$('body').append('<div class="page-change-preloader preloader-light"><div id="preload-spinner" class="spinner-blue"></div></div>');
 });
 

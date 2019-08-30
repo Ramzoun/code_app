@@ -13,6 +13,7 @@ var p = "http://192.168.1.4:8080/category/"
 		+"/"
 		+urlParams.get('s');
 */
+console.log('-1_');
 var p = "http://192.168.1.222:8080/category/"
 		+getUrlParameter('th')
 		+"/"
@@ -33,12 +34,13 @@ $.getJSON(p, function(data) {
 								+'</div>');
     });      
 }).fail(function(jqxhr, textStatus, error){
-											/*
+											
 											var err = textStatus + ", " + error;
 											console.log( "Request Failed: " + err );
-											*/
-											window.location = "pageapp-login.html";
+											
+											//window.location = "pageapp-login.html";
 										});
+										console.log('-2_');
 });
 
 
