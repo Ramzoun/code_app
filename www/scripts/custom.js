@@ -60,19 +60,22 @@ $(document).ready(function(){
 		}
 
 
-		$(".pageapp-login-button").click(function(){    
+		$('.pageapp-login-button').on('click',function(){ 
+			alert('xxxx');
 			$.ajax({
-					type: "GET",
-					url: "http://192.168.1.222:8080/access",
-					headers: {"Authorization": "Basic " + btoa( $("input#username").val() + ":" + $("input#password").val())}
+					type: 'GET',
+					url: 'http://192.168.1.222:8080/access',
+					headers: {'Authorization' : 'Basic' + btoa( $("input#username").val() + ':' + $("input#password").val())}
 			})
 			.done(function(){
-					alert('Authenticated!');
-					window.location = "index.html";
+					console.log('Authenticated!');
+					//window.location = "index.html";
 			})
 			.fail(function(){
-				alert('Error!')
+				console.log('Error!')
 			});
+			
+			alert('login button clicked');
 	
 		});
 		
