@@ -29,7 +29,8 @@ $(document).ready(function(){
 		// aaaaa
 		if($('#me').length){
 				const urlParams = new URLSearchParams(window.location.search);
-				var p = "http://192.168.1.222:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
+				//var p = "http://192.168.1.222:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
+				var p = "http://192.168.1.222:8080/category/demo";
 				//console.log(p)
 				
 				$.getJSON(p, function(data) {     
@@ -49,10 +50,10 @@ $(document).ready(function(){
 					});      
 				}).fail(function(jqxhr, textStatus, error){
 											
-											//var err = textStatus + ", " + error;
-											//console.log( "Request Failed: " + err );
+											var err = textStatus + ", " + error;
+											console.log( "Request Failed: " + err );
 											
-											window.location = "pageapp-login.html";
+											//window.location = "pageapp-login.html";
 										});
 										
 				//console.log('____s___');
@@ -69,10 +70,13 @@ $(document).ready(function(){
 			})
 			.done(function(){
 					console.log('Authenticated!');
+					alert('Authenticated!');
 					//window.location = "index.html";
 			})
 			.fail(function(){
-				console.log('Error!')
+				var err = textStatus + ", " + error;
+				console.log( "Request Failed: " + err );
+				alert("Request Failed: " + err);
 			});
 			
 			alert('login button clicked');
