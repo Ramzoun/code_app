@@ -73,9 +73,9 @@ $(document).ready(function(){
 					alert('Authenticated!');
 					//window.location = "index.html";
 			})
-			.fail(function(){
-				//var err = textStatus + ", " + error;
-				console.log( "Request Failed: " );
+			.fail(function(jqxhr, textStatus, error){
+				var err = textStatus + ", " + error;
+				console.log( "Request Failed: "+ err );
 				//alert("Request Failed: " + err);
 			});
 			
