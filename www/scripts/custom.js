@@ -29,7 +29,7 @@ $(document).ready(function(){
 		// aaaaa
 		if($('#me').length){
 				const urlParams = new URLSearchParams(window.location.search);
-				var p = "http://192.168.1.222:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
+				var p = "http://51.178.25.226:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
 				//var p = "http://192.168.1.222:8080/category/demo";
 				//console.log(p)
 				
@@ -64,7 +64,7 @@ $(document).ready(function(){
 		if($('#meLite').length){
 				//const urlParams = new URLSearchParams(window.location.search);
 				//var p = "http://192.168.1.222:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
-				var p = "http://192.168.1.222:8080/category/demo";
+				var p = "http://51.178.25.226:8080/category/demo";
 				//console.log(p)
 				
 				$.getJSON(p, function(data) {     
@@ -99,7 +99,7 @@ $(document).ready(function(){
 			//alert('xxxx');
 			$.ajax({
 					type: 'GET',
-					url: 'http://192.168.1.222:8080/access',
+					url: 'http://51.178.25.226:8080/access',
 					headers: {'Authorization' : 'Basic' + btoa( $("input#username").val() + ':' + $("input#password").val())}
 			})
 			.done(function(){
