@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <title>Code Route 1 </title>
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script>
+
+                function l() {
+        
+                    $.ajax
+                        ({
+                            type: "GET",
+                            url: "http://51.178.25.226:8080/access",
+                            headers: {
+                                "Authorization": "Basic " + btoa($("input#username").val() + ":" + $("input#password").val())
+                            }
+                        })
+                        .done(function () {
+                            alert('Authenticated!');
+                            window.location = "index.html";
+                        })
+                        .fail(function () {
+                            alert('Error!')
+                        });
+        
+                }
+        
+            </script>
+</head>
+
+<body>
+    <form name="f" method="GET">
+        <input type="text" name="username" id="username">
+        <input type="password" name="password" id="password">
+        <input type="button" name="button" value="OK" onclick="l()">
+    </form>
+
+
+   
+
+</body>
+
+</html>

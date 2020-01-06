@@ -23,18 +23,22 @@ $(document).ready(function () {
 		items: 1
 	});
 
-
-
+	
+	
 	$(function () {
-		var p = "http://51.178.25.226:8080/demo";
+
+		const urlParams = new URLSearchParams(window.location.search);
+		var p = "http://51.178.25.226:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
+		//var p = "http://51.178.25.226:8080/category/2/1";
+		//var p = "http://192.168.1.222:8080/category/"+$.getUrlParameter('th')+"/"+$.getUrlParameter('s');
 
 		$.getJSON(p, function (data) {
 
 			$.each(data, function (i, field) {
 				owl.trigger('add.owl.carousel','<img width="700" class="preload-image" src="http://51.178.25.226:8080/res/205">'
-					+ '<h4>' + field.qText 
+					+ '<h4>' + field.q 
 					+ '</h4>'
-					+ '<p>' + field.pro1 + '<br>' + field.pro2 + '<br>' + field.pro3 + '</p>'
+					+ '<p>' + field.p1 + '<br>' + field.p2 + '<br>' + field.p3 + '</p>'
 					+ '</div>');
 			});
 
@@ -46,7 +50,7 @@ $(document).ready(function () {
 			var err = textStatus + ", " + error;
 			console.log("Request Failed: " + err);
 
-			window.location = "pageapp-login.html";
+			window.location = "login.html";
 		});
 	});
 
