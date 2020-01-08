@@ -34,11 +34,11 @@ $(document).ready(function () {
 
 		$.getJSON(p, function (data) {
 
-			$.each(data, function (i, field) {
-				owl.trigger('add.owl.carousel','<img width="700" class="preload-image" src="http://51.178.25.226:8080/res/205">'
+			$.each(data, function (j, field) {
+				owl.trigger('add.owl.carousel','<img width="700" class="preload-image" src="http://51.178.25.226:8080/res/'+field.i+'">'
 					+ '<h4>' + field.q 
 					+ '</h4>'
-					+ '<p>' + field.p1 + '<br>' + field.p2 + '<br>' + field.p3 + '</p>'
+					+ '<p>' + field.l + '<br>' + field.m + '<br>' + field.n + '</p>'
 					+ '</div>');
 			});
 
