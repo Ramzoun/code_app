@@ -20,20 +20,37 @@
         }
     </style>
     <script type="text/javascript" src="scripts/jquery.js"></script>
+
+</head>
+
+<body>
+    <div class="main" dir="rtl">
+        <form id="f" method="GET">
+            <div>
+                <label for="username">رقم الهاتف</label>
+                <input type="text" id="username" size="8" autofocus autocomplete="on">
+            </div>
+            <div>
+                <label for="password">كلمة السر</label>
+                <input type="password" id="password" size="8" autocomplete="on">
+            </div>
+            <input type="checkbox" id="rm" value="" checked> remember me <br>
+            <input type="button" id="button" value="OK" onclick="l()">
+
+
+        </form>
+    </div>
+
+
     <script>
         nb = 0;
-
-        $('#f').on('submit', function () {
-            console.log("local storage");
-
-        });
 
 
         if (typeof (Storage) !== "undefined") {
 
             if (localStorage.pNumber != '') {
                 $('#username').val(localStorage.pNumber);
-                $('#password').val(localStorage.password);
+                $('#password').val(localStorage.pwd);
             }
             // Code for localStorage/sessionStorage.
         } else {
@@ -60,21 +77,23 @@
                                 localStorage.pwd = $('#password').val();
                                 //localStorage.checkBoxValidation = $('#rememberMe').val();
                             } else {
-                                localStorage.pNumber = '';
-                                localStorage.pwd = '';
+                                localStorage.removeItem("pNumber");
+                                localStorage.removeItem("pwd");
                                 //localStorage.checkBoxValidation = '';
                             }
                         }
                         window.location = "menu.html";
                     })
                     .fail(function () {
+
                         $("#password").val("");
                         $("#username").val("");
                         $("#username").focus();
                         if (typeof (Storage) !== "undefined") {
-                            localStorage.pNumber = '';
-                            localStorage.pwd = '';
+                            localStorage.removeItem("pNumber");
+                            localStorage.removeItem("pwd");
                         }
+
                         nb++;
                     });
             } else {
@@ -86,25 +105,7 @@
         }
 
     </script>
-</head>
 
-<body>
-    <div class="main" dir="rtl">
-        <form id="f" method="GET">
-            <div>
-                <label for="username">رقم الهاتف</label>
-                <input type="text" id="username" size="8" autofocus autocomplete="on">
-            </div>
-            <div>
-                <label for="password">كلمة السر</label>
-                <input type="password" id="password" size="8" autocomplete="on">
-            </div>
-            <input type="checkbox" id="rm" value="" checked> remember me <br>
-            <input type="button" name="button" value="OK" onclick="l()">
-
-
-        </form>
-    </div>
 </body>
 
 </html>
