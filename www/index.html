@@ -5,32 +5,82 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <title>Code Route 1 </title>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        .main {
+            display: flex;
+            margin-top: 100px;
+            height: 100%;
+            min-height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <script>
         nb = 0;
 
+        $('#f').on('submit', function () {
+            console.log("local storage");
+
+        });
+
+
+        if (typeof (Storage) !== "undefined") {
+
+            if (localStorage.pNumber != '') {
+                $('#username').val(localStorage.pNumber);
+                $('#password').val(localStorage.password);
+            }
+            // Code for localStorage/sessionStorage.
+        } else {
+            // Sorry! No Web Storage support..
+            $("#rm").hide();
+        }
+
         function l() {
-            if (nb < 5) {
+            if (nb < 3) {
                 $.ajax
                     ({
                         type: "GET",
                         url: "http://51.178.25.226:8080/access",
                         headers: {
-                            "Authorization": "Basic " + btoa($("input#username").val() + ":" + $("input#password").val())
+                            "Authorization": "Basic " + btoa($("#username").val() + ":" + $("#password").val())
                         }
                     })
                     .done(function () {
                         //alert('Authenticated!');
+                        if (typeof (Storage) !== "undefined") {
+                            if ($('#rm').is(':checked')) {
+                                // save username and password
+                                localStorage.pNumber = $('#username').val();
+                                localStorage.pwd = $('#password').val();
+                                //localStorage.checkBoxValidation = $('#rememberMe').val();
+                            } else {
+                                localStorage.pNumber = '';
+                                localStorage.pwd = '';
+                                //localStorage.checkBoxValidation = '';
+                            }
+                        }
                         window.location = "menu.html";
                     })
                     .fail(function () {
-                        alert('Error!');
+                        $("#password").val("");
+                        $("#username").val("");
+                        $("#username").focus();
+                        if (typeof (Storage) !== "undefined") {
+                            localStorage.pNumber = '';
+                            localStorage.pwd = '';
+                        }
                         nb++;
                     });
-            }else{
-                $("button#button").attr("disabled", true);
-                $("input#username").attr("disabled", true);
-                $("input#password").attr("disabled", true);
+            } else {
+                $("#button").attr("disabled", true);
+                $("#username").attr("disabled", true);
+                $("#password").attr("disabled", true);
             }
 
         }
@@ -39,12 +89,22 @@
 </head>
 
 <body>
-    <form name="f" method="GET" >
-        <input type="text" name="username" id="username" autocomplete="on">
-        <input type="password" name="password" id="password" autocomplete="on">
-        <input type="button" name="button" value="OK" onclick="l()">
-    </form>
+    <div class="main" dir="rtl">
+        <form id="f" method="GET">
+            <div>
+                <label for="username">رقم الهاتف</label>
+                <input type="text" id="username" size="8" autofocus autocomplete="on">
+            </div>
+            <div>
+                <label for="password">كلمة السر</label>
+                <input type="password" id="password" size="8" autocomplete="on">
+            </div>
+            <input type="checkbox" id="rm" value="" checked> remember me <br>
+            <input type="button" name="button" value="OK" onclick="l()">
 
+
+        </form>
+    </div>
 </body>
 
 </html>
