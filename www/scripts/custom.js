@@ -28,14 +28,12 @@ $(document).ready(function () {
 	$(function () {
 
 		const urlParams = new URLSearchParams(window.location.search);
-		var p = "http://51.178.25.226:8080/category/"+urlParams.get('th')+"/"+urlParams.get('s');
-		//var p = "http://51.178.25.226:8080/category/2/1";
-		//var p = "http://192.168.1.222:8080/category/"+$.getUrlParameter('th')+"/"+$.getUrlParameter('s');
+		var p = "http://51.178.25.226:8008/category/"+urlParams.get('th')+"/"+urlParams.get('s');
 
 		$.getJSON(p, function (data) {
 
 			$.each(data, function (j, field) {
-				owl.trigger('add.owl.carousel','<img width="700" class="preload-image" src="http://51.178.25.226:8080/res/'+field.i+'">'
+				owl.trigger('add.owl.carousel','<img width="700" class="preload-image" src="http://51.178.25.226:8008/res/'+field.i+'">'
 					+ '<h4>' + field.q 
 					+ '</h4>'
 					+ '<p>' + field.l + '<br>' + field.m + '<br>' + field.n + '</p>'
@@ -47,10 +45,10 @@ $(document).ready(function () {
 			
 		}).fail(function (jqxhr, textStatus, error) {
 
-			var err = textStatus + ", " + error;
-			console.log("Request Failed: " + err);
+			//var err = textStatus + ", " + error;
+			//console.log("Request Failed: " + err);
 
-			window.location = "login.html";
+			window.location = "index.html";
 		});
 	});
 
