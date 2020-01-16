@@ -33,10 +33,13 @@ $(document).ready(function () {
 		$.getJSON(p, function (data) {
 
 			$.each(data, function (j, field) {
-				owl.trigger('add.owl.carousel','<img width="700" class="preload-image" src="http://51.178.25.226:8008/res/'+field.i+'">'
-					+ '<h4>' + field.q 
-					+ '</h4>'
-					+ '<p>' + field.l + '<br>' + field.m + '<br>' + field.n + '</p>'
+				owl.trigger('add.owl.carousel','<div> <img width="700" class="preload-image" src="http://51.178.25.226:8008/res/'+field.i+'">'
+					+ '<h4>' + field.q + '</h4>'
+					+ '<p>' 
+					+ 		'<input type="radio" name="r'+field.i+'" id="c'+field.i+'1" value="a" /> <label for="c'+field.i+'1">'+field.l + '</label> <br />' 
+					+ 		'<input type="radio" name="r'+field.i+'" id="c'+field.i+'2" value="b" /> <label for="c'+field.i+'2">'+field.m + '</label> <br />'  
+					+ 		'<input type="radio" name="r'+field.i+'" id="c'+field.i+'3" value="c" /> <label for="c'+field.i+'3">'+field.n + '</label> <br />'  
+					+ '</p>'
 					+ '</div>');
 			});
 
