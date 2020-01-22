@@ -24,7 +24,6 @@
 	<preference name="SplashScreen" value="splash" />
 	<preference name="SplashScreenDelay" value="10000" />
 	
-	
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 	<!--
@@ -32,7 +31,17 @@
 	-->
 	
 	<platform name="android">
-		
+		 <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
+    <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
+    <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
+    <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+
+    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+	
+	
 		<icon src="res/icons/android/ldpi.png" density="ldpi" />
         <icon src="res/icons/android/mdpi.png" density="mdpi" />
         <icon src="res/icons/android/hdpi.png" density="hdpi" />
