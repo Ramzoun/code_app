@@ -32,22 +32,7 @@
 	-->
 	
 	<platform name="android">
-		<splash src="res/screen/android/lhdpi.png" density="land-hdpi"/>
-    	<splash src="res/screen/android/lldpi.png" density="land-ldpi"/>
-    	<splash src="res/screen/android/lmdpi.png" density="land-mdpi"/>
-    	<splash src="res/screen/android/lxhdpi.png" density="land-xhdpi"/>
-
-    	<splash src="res/screen/android/phdpi.png" density="port-hdpi"/>
-    	<splash src="res/screen/android/pldpi.png" density="port-ldpi"/>
-    	<splash src="res/screen/android/pmdpi.png" density="port-mdpi"/>
-    	<splash src="res/screen/android/pxhdpi.png" density="port-xhdpi"/>
-
-
-		<icon src="res/icons/android/ldpi.png" density="ldpi" />
-        <icon src="res/icons/android/mdpi.png" density="mdpi" />
-        <icon src="res/icons/android/hdpi.png" density="hdpi" />
-        <icon src="res/icons/android/xhdpi.png" density="xhdpi" />
-
+		
 	</platform>
 	
 	
