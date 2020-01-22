@@ -29,15 +29,15 @@
 	-->
 	
 	<platform name="android">
-		<splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
-    	<splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
-    	<splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
-    	<splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+		<splash src="res/screen/android/lhdpi.png" density="land-hdpi"/>
+    	<splash src="res/screen/android/lldpi.png" density="land-ldpi"/>
+    	<splash src="res/screen/android/lmdpi.png" density="land-mdpi"/>
+    	<splash src="res/screen/android/lxhdpi.png" density="land-xhdpi"/>
 
-    	<splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
-    	<splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
-    	<splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
-    	<splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+    	<splash src="res/screen/android/phdpi.png" density="port-hdpi"/>
+    	<splash src="res/screen/android/pldpi.png" density="port-ldpi"/>
+    	<splash src="res/screen/android/pmdpi.png" density="port-mdpi"/>
+    	<splash src="res/screen/android/pxhdpi.png" density="port-xhdpi"/>
 
 
 		<icon src="res/icons/android/ldpi.png" density="ldpi" />
