@@ -28,34 +28,16 @@
             /* align items in Cross Axis */
             align-content: stretch;
             /* Extra space in Cross Axis */
-
-            /*background: rgba(255, 255, 255, .1);*/
         }
 
         .main {
-
-            display: flex;
-            flex-direction: row;
-
-            justify-content: center;
-            /* align items in Main Axis */
-            align-items: center;
-            /* align items in Cross Axis */
-            /*align-content: center;*/
-            /* Extra space in Cross Axis */
-            flex: 1;
-            /*background-color: aquamarine;*/
-            /*
             display: flex;
             flex-direction: column;
-            flex: 1;
-            
-            margin-top: 100px;
-            height: 100%;
-            min-height: 100%;
+
             justify-content: center;
             align-items: center;
-*/
+            /* Extra space in Cross Axis */
+            flex: 1;
         }
     </style>
     <script type="text/javascript" src="scripts/jquery.js"></script>
@@ -67,32 +49,34 @@
 
         <div class="main" dir="rtl">
             <form id="f" method="GET">
-                <h4>تسجيل الدخول</h4>
                 <table>
                     <tr>
-                        <td><label for="username">رقم الهاتف</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="username" size="8" autofocus autocomplete="on"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="password">كلمة السر</label></td>
-                    </tr>
-                    <tr>
-
-                        <td><input type="password" id="password" size="8" autocomplete="on"></td>
+                        <td>
+                            <strong>تسجيل الدخول</strong>
+                        </td>
                     </tr>
 
                     <tr>
+                        <td><input type="text" id="username" size="8" autofocus autocomplete="on"
+                                placeholder="رقم الهاتف"></td>
+                    </tr>
 
+                    <tr>
+                        <td><input type="password" id="password" size="8" autocomplete="on" placeholder="كلمة السر">
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td><input type="checkbox" id="rm" value="" checked>الإبقاء على تسجيل الدخول</td>
                     </tr>
-                    <tr>
 
+                    <tr>
                         <td><input type="button" id="button" value="تسجيل الدخول" onclick="l()"></td>
                     </tr>
 
+
                 </table>
+
 
             </form>
         </div>
