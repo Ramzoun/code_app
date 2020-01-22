@@ -21,6 +21,9 @@
 	
 	<preference name="Orientation" value="landscape" />
 	
+	<preference name="SplashScreen" value="splash" />
+	<preference name="SplashScreenDelay" value="10000" />
+	
 	
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
